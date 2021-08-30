@@ -1,12 +1,22 @@
 function eval() {
-    // Do not use eval!!!
-    return;
+  // Do not use eval!!!
+  return;
 }
 
 function expressionCalculator(expr) {
-    // write your solution here
-}
+  const operators = {
+    '+': (x, y) => x + y,
+    '-': (x, y) => x - y,
+    '*': (x, y) => x * y,
+    '/': (x, y) => x / y
+  };
+
+  let exprNew = expr.split('').filter(item => item !== ' ');
+  console.log('ssss', exprNew[0], exprNew[2])
+  return (operators[exprNew[1]](+exprNew[0], +exprNew[2]));
+
+};
 
 module.exports = {
-    expressionCalculator
+  expressionCalculator
 }
